@@ -4,6 +4,12 @@ import WarehouseOutlinedIcon from "@mui/icons-material/WarehouseOutlined";
 import FactoryOutlinedIcon from "@mui/icons-material/FactoryOutlined";
 import Shop2OutlinedIcon from "@mui/icons-material/Shop2Outlined";
 import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
+import MobileFriendlyOutlinedIcon from "@mui/icons-material/MobileFriendlyOutlined";
+import DeliveryDiningOutlinedIcon from "@mui/icons-material/DeliveryDiningOutlined";
+import Logo from '../../public/assets/images/logos/logo3.png'
+import cart from '../../public/assets/images/logos/cart.png'
+
+
 
 const Sidebar = () => {
   return (
@@ -19,11 +25,11 @@ const Sidebar = () => {
             className="text-nowrap logo-img d-flex "
             style={{ marginLeft: "-18px" }}
           >
-            <img src="/assets/images/logos/logo3.png" alt="logo" width={160} />
+            <img src={Logo} alt="logo" width={160} />
           </Link>
           <Link style={{ marginRight: "-18px" }}>
             {" "}
-            <img src="/assets/images/logos/cart.png" alt="cart" height={43} />
+            <img src={cart}alt="cart" height={43} />
           </Link>
           <div
             className="close-btn d-xl-none d-block sidebartoggler cursor-pointer"
@@ -157,9 +163,9 @@ const Sidebar = () => {
               >
                 <div className="d-flex align-items-center gap-3">
                   <span className="d-flex">
-                    <i className="fa-solid fa-cart-flatbed"></i>
+                    <MobileFriendlyOutlinedIcon />{" "}
                   </span>
-                  <span className="hide-menu">Order</span>
+                  <span className="hide-menu">Sale Order</span>
                 </div>
               </a>
               <ul aria-expanded="false" className="collapse first-level">
@@ -177,7 +183,7 @@ const Sidebar = () => {
             </li>
             <li className="sidebar-item">
               <Link to="delivery/listdelivery" className="sidebar-link">
-                <i className="fa-solid fa-truck-field-un"></i>
+                <DeliveryDiningOutlinedIcon />
                 <span className="hide-menu">Delivery</span>
               </Link>
             </li>

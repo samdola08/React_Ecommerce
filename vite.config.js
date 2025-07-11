@@ -2,7 +2,7 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
 export default defineConfig({
-  // base: '/ecommerce_app/ecommerce-backend/',   //  ← exact URL folder!
+  // base: '/ecommerce_app/dist',   //  ← exact URL folder!
   plugins: [react()],
   build: {
     chunkSizeWarningLimit: 1000,

@@ -55,8 +55,8 @@ import CreateDelivery from "./pages/Delivery/CreateDelivery.jsx";
 
 function App() {
   return (
-    //  <BrowserRouter basename="/ecommerce_app/ecommerce-backend">
-    <BrowserRouter> 
+    //  <BrowserRouter basename="/ecommerce_app/dist">
+    <BrowserRouter>  
       <Routes>
         <Route path="/" element={<MainLayout />}>
           <Route index element={<Dashboard />} />
