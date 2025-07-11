@@ -1,0 +1,423 @@
+body {
+  width: 100% !important;
+ 
+}
+
+
+.btn2 {
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  font-weight: 600;
+  color: #fff;
+  background-color: #1e4db7;
+  border-radius: 7px;
+  cursor: pointer;
+  overflow: hidden;
+  z-index: 1;
+  transition: color 0.3s ease, border 0.3s ease;
+}
+.btn2::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #eb9ca1;
+
+  transform: translateY(-100%);
+  transform-origin: top left;
+
+  transition: transform 0.4s ease-in-out;
+  z-index: -1;
+}
+
+.btn2:hover::before {
+  transform: translate(0, 0);
+}
+
+.btn2:hover {
+  color: #fff;
+  border: none;
+  font-weight: bold;
+}
+
+.btn3 {
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  font-weight: 600;
+  color: #fff;
+  background-color: #ee6b4d;
+  border-radius: 7px;
+  cursor: pointer;
+  overflow: hidden;
+  z-index: 1;
+  transition: color 0.3s ease;
+}
+
+.btn3::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #3d5b81;
+
+  transform: translateY(100%);
+  transform-origin: bottom left;
+  transition: transform 0.4s ease-in-out;
+  z-index: -1;
+}
+
+.btn3:hover::before {
+  transform: translateY(0);
+}
+
+.btn3:hover {
+  color: #fff;
+  font-weight: bold;
+}
+/* .icon-edit  { background:#034158; color:#f0ebeb; padding:6px 2px; border-radius:4px; }
+.icon-delete{ background:#DD3162; color:#f0ebeb; padding:6px 2px; border-radius:4px; }
+.icon-view  { background:#034158; color:#f0ebeb; padding:6px 2px; border-radius:4px; } */
+
+.icon-edit,
+.icon-delete,
+.icon-view,
+.icon-invoice {
+  position: relative; /* for ::before positioning */
+  padding: 6px 3px;
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #f0ebeb;
+  
+  overflow: hidden; /* to clip ::before */
+  transition: color 0.3s ease; /* text color change smooth */
+  z-index: 0;
+}
+
+/* Initial backgrounds set transparent, real bg by ::before */
+.icon-edit::before,
+.icon-delete::before,
+.icon-view::before,
+.icon-invoice::before{
+  content: "";
+  position: absolute;
+  inset: 0; /* top:0; left:0; right:0; bottom:0; */
+  border-radius: 4px;
+  z-index: -1;
+  transform: translateY(100%);
+  transform-origin: bottom left;
+  transition: transform 0.4s ease-in-out;
+}
+
+.icon-edit {
+  background: #034158;
+  margin-right: 15px;
+}
+
+.icon-delete {
+  background: #dd3162;
+  margin-right: 15px;
+}
+
+.icon-view {
+  background: rgba(56, 173, 169,1.0);
+}
+.icon-invoice {
+  background: rgba(106, 137, 204,1.0);
+  margin-right:15px ;
+}
+
+.icon-edit::before {
+  background: #6397bf;
+}
+
+.icon-delete::before {
+  background: #6d5a7a;
+}
+
+.icon-view::before {
+  background: rgba(128, 142, 155,1.0);
+}
+
+.icon-invoice::before {
+  background:rgba(246, 185, 59,1.0);
+}
+/* On hover: slide up background and change text color */
+.icon-edit:hover,
+.icon-delete:hover,
+.icon-view:hover,
+.icon-invoice:hover {
+  color: #fff; /* change icon color if needed */
+}
+
+.icon-edit:hover::before,
+.icon-delete:hover::before,
+.icon-view:hover::before,
+.icon-invoice:hover::before {
+  transform: translateY(0);
+}
+
+/* SVG fill inherits color */
+.icon-edit svg,
+.icon-delete svg,
+.icon-view svg
+.icon-invoice svg {
+  fill: currentColor;
+}
+
+/* Also move icon up a bit on hover */
+.icon-edit:hover,
+.icon-delete:hover,
+.icon-view:hover,
+.icon-invoice:hover {
+  transform: translateY(-6px);
+  transition: transform 0.4s ease, color 0.3s ease;
+}
+
+.card,
+.card-body {
+  width: 100%;
+  margin: 20px auto;
+  max-width: 100%;
+  color: #034158;
+}
+body {
+  font-family: "Ubuntu", sans-serif !important;
+  font-weight: 500 !important;
+  font-style: normal !important;
+}
+.social-icon {
+  height: 40px;
+  font-size: 40px;
+  display: inline-block; /* display:flex বাতিল করলাম কারণ একসাথে ব্যবহার করলে শেষে যেটা থাকবে সেটাই কার্যকর হয় */
+  color: #034158;
+  transition: color 0.3s ease, transform 0.3s ease;
+  cursor: pointer; /* দেখানোর জন্য আইকন hoverable */
+}
+
+.social-icon:hover {
+  color: #d85354;
+  transform: translateY(6px); /* নিচে 4px সরবে */
+}
+
+table{
+      /* font-size: 20px; */
+      width: 100%;
+}
+td{
+  gap: 30px;
+}
+/* On mobile, make each row block for better readability */
+@media (max-width: 767.98px) {
+  table.manage-table thead {
+    display: none;
+  }
+  table.manage-table tbody tr {
+    display: block;
+    margin-bottom: 1.5rem;
+    border: 1px solid #ddd;
+    padding: 0.75rem;
+    border-radius: 8px;
+  }
+  table.manage-table tbody tr td {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    border: none;
+    border-bottom: 1px solid #eee;
+  }
+  table.manage-table tbody tr td:last-child {
+    border-bottom: none;
+  }
+  table.manage-table tbody tr td::before {
+    content: attr(data-label);
+    font-weight: 600;
+    color: #555;
+  }
+}
+.product-price {
+  font-size: 1.25rem; /* ~20px */
+  font-weight: 600;
+  color: #198754; /* Bootstrap success green */
+}
+
+/* Discount price style */
+.product-discount {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #dc3545; /* Bootstrap danger red */
+}
+
+/* Net Price style (highlighted) */
+.product-netprice {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #198754;
+}
+
+/* Field label */
+.product-field-label {
+  font-weight: 600;
+  color: #034158;
+  margin-bottom: 4px;
+  display: block;
+}
+
+/* Responsive layout for the fields */
+.row > div {
+  /* margin-bottom: 1rem; */
+}
+.row {
+  margin-top: -50px !important;
+}
+
+
+/* Image thumbnail styling */
+.img-thumbnail {
+  border-radius: 8px;
+  max-width: 500px; /* max width instead of width */
+  width: 100%; /* allow it to shrink on smaller screens */
+  height: auto;
+  object-fit: contain;
+  margin-bottom: 1rem;
+}
+/* ──────────────────────────────────────────
+   Color variables – tweak once, reuse many
+   ────────────────────────────────────────── */
+:root {
+  --primary-100: #e9f1f5;
+  --primary-500: #034158; /* main brand colour */
+  --primary-600: #02354a;
+  --accent-500: #ee6b4d; /* for action buttons */
+  --accent-600: #d45e43;
+  --text-400: #677788;
+}
+/* Prevent small slider from wrapping */
+.slick-slider .slick-slide {
+  display: inline-block !important;
+  float: none !important;
+}
+
+/* Optional: make small slider container overflow-x scroll on small screens */
+.slick-slider {
+  white-space: nowrap;
+}
+/* =========  Purchase List  (prefix pl-*)  =============================== */
+
+/* --- layout containers -------------------------------------------------- */
+.pl-container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 1rem;
+  box-sizing: border-box;
+  font-family: system-ui, sans-serif;
+}
+
+.pl-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.pl-title {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #034158;
+}
+
+/* --- search ------------------------------------------------------------- */
+.pl-search {
+  width: 100%;
+  max-width: 400px;
+  padding: 0.5rem 0.75rem;
+  font-size: 1rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 0.375rem;
+  margin-bottom: 1.25rem;
+  box-sizing: border-box;
+}
+
+/* --- card + table ------------------------------------------------------- */
+.pl-card {
+  border: 1px solid #e2e8f0;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,.08);
+  overflow: hidden;
+}
+
+.pl-table-wrapper { overflow-x: auto; }
+
+.pl-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.pl-table thead {
+  background: #f1f5f9;
+}
+
+.pl-table th,
+.pl-table td {
+  padding: 0.65rem 0.75rem;
+  border-top: 1px solid #f1f5f9;
+  text-align: left;
+}
+
+.pl-table th { font-weight: 600; color: #334155; }
+
+.pl-center { text-align: center; padding: 1rem; }
+
+/* --- pagination helper (optional) -------------------------------------- */
+.pl-pagination { margin-top: 1.25rem; text-align: center; }
+
+/* ===========  mobile transform (<576 px)  =============================== */
+@media (max-width: 575.98px) {
+
+  /* hide table head */
+  .pl-table thead { display: none; }
+
+  /* each row becomes a card */
+  .pl-table tr { display: block; margin-bottom: 0.85rem; background: #fff; }
+
+  /* cells: flex label | value */
+  .pl-table td {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.75rem;
+    padding: 0.55rem 0.9rem;
+    border-top: 1px solid #f1f5f9;
+  }
+
+  .pl-table td::before {
+    content: attr(data-label);
+    font-weight: 600;
+    color: #64748b;
+  }
+}
+.badge-btn{
+  padding:.25rem .55rem;
+  font-size:.75rem;
+  font-weight:600;
+  border:0;
+  border-radius:.35rem;
+  cursor:pointer;
+  transition:opacity .15s ease;
+}
+.badge-btn:hover{opacity:.85}
+
+/* payment_status colors */
+.badge-btn.due     {background:#facc15;color:#4c4c1e}
+.badge-btn.partial {background:#f97316;color:#fff}
+.badge-btn.paid    {background:#16a34a;color:#fff}
+
+/* status colors */
+.badge-btn.pending   {background:#0ea5e9;color:#fff}
+.badge-btn.completed {background:#10b981;color:#fff}
+.badge-btn.cancelled {background:#ef4444;color:#fff}

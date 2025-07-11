@@ -1,0 +1,19 @@
+/* === পুরো সেলের ব্যাকগ্রাউন্ড === */
+.icon-actions {
+  background: #034158;
+  text-align: center;
+  padding: 8px 12px;
+}
+
+/* === সমস্ত আইকনের (MUI svg) কমন রুল === */
+.icon-actions .MuiSvgIcon-root {
+  color: #c7d6db;          /* রঙ ঠিক এখানেই লাগান */
+  margin: 0 6px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+/* === হোভার করলে আইকন 2px নীচে নামবে === */
+.icon-actions .MuiSvgIcon-root:hover {
+  transform: translateY(2px);
+}
